@@ -21,7 +21,7 @@ module tb ();
   reg [3:0] b;
   reg [7:0] ui_in;
   reg [7:0] uio_in;
-  wire [2:0] ou_dum;
+  wire [2:0] uo_dum;
   wire [3:0] sum;
   wire carry_out;
   wire [7:0] uo_out;
