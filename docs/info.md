@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+This project works by using combinatory logic to add two 4-bit inputs. This is incorporated using Kogge Stone's adder.
 
 ## How to test
 
-Explain how to use your project
+In test.py assign a value to both dut.a.value and dut.b.value, both values should be at most 15. if the sum is larger than 16, cout will be , otherwise cout is 0. The final sum is dut.sum.value + dut.carry_out.value * 16.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+No external hardware was used in this project.
