@@ -220,7 +220,7 @@ async def test_project(dut):
     # test 28
     dut.a.value = 5
     dut.b.value = 1
-    await ClockCycles(dut.clk, 10)
+    await ClockCycles(dut.clk, 20)
     dut._log.info(f"28. value of outputs are: {dut.sum.value} and {dut.carry_out.value}.")
     assert dut.sum.value == 6 and dut.carry_out.value == 0 
 
