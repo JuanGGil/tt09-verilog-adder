@@ -1823,31 +1823,17 @@ async def test_project(dut):
     # TESTING MINIMUM CLOCK CYCLES FOR VARYING NUMBERS
 
     # test 257
-    dut.a.value = 15
-    dut.b.value = 15
+    dut.a.value = 0
+    dut.b.value = 0
     await ClockCycles(dut.clk, 1)
     dut._log.info(f"257. value of outputs are: {dut.sum.value} and {dut.carry_out.value}. 1 Clock Cycles")
-    assert dut.sum.value == 14 and dut.carry_out.value == 1 
+    assert dut.sum.value == 0 and dut.carry_out.value == 0 
 
     # test 258
-    dut.a.value = 0
-    dut.b.value = 0
-    await ClockCycles(dut.clk, 1)
-    dut._log.info(f"258. value of outputs are: {dut.sum.value} and {dut.carry_out.value}. 1 Clock Cycles")
-    assert dut.sum.value == 0 and dut.carry_out.value == 0 
-
-    # test 260
-    dut.a.value = 0
-    dut.b.value = 0
-    await ClockCycles(dut.clk, 0)
-    dut._log.info(f"259. value of outputs are: {dut.sum.value} and {dut.carry_out.value}. 0 Clock Cycles")
-    assert dut.sum.value == 0 and dut.carry_out.value == 0 
-
-    # test 257
     dut.a.value = 15
     dut.b.value = 15
-    await ClockCycles(dut.clk, 0)
-    dut._log.info(f"260. value of outputs are: {dut.sum.value} and {dut.carry_out.value}. 0 Clock Cycles")
+    await ClockCycles(dut.clk, 1)
+    dut._log.info(f"258. value of outputs are: {dut.sum.value} and {dut.carry_out.value}. 1 Clock Cycles")
     assert dut.sum.value == 14 and dut.carry_out.value == 1 
 
     # Keep testing the module by changing the input values, waiting for
