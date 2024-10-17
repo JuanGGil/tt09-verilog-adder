@@ -1825,15 +1825,15 @@ async def test_project(dut):
     # test 257
     dut.a.value = 0
     dut.b.value = 0
-    await ClockCycles(dut.clk, 0)
-    dut._log.info(f"value of outputs are: {dut.sum.value} and {dut.carry_out.value}. 0 Clock Cycles")
+    await ClockCycles(dut.clk, 1)
+    dut._log.info(f"value of outputs are: {dut.sum.value} and {dut.carry_out.value}. 1 Clock Cycles")
     assert dut.sum.value == 0 and dut.carry_out.value == 0 
 
     # test 258
     dut.a.value = 15
     dut.b.value = 15
-    await ClockCycles(dut.clk, 0)
-    dut._log.info(f"value of outputs are: {dut.sum.value} and {dut.carry_out.value}. 0 Clock Cycles")
+    await ClockCycles(dut.clk, 1)
+    dut._log.info(f"value of outputs are: {dut.sum.value} and {dut.carry_out.value}. 1 Clock Cycles")
     assert dut.sum.value == 14 and dut.carry_out.value == 1 
 
     # test 259
