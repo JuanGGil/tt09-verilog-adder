@@ -40,7 +40,7 @@ module tt_um_keggestone_adder4 (
 
   // Stage 2: Compute generate signals for 2-bit groups
   wire g2_2, g2_3;
-  assign g2_2 = g1_2 | (p[2] & g[0]);   // Combine 2-bit group (2nd and 0th bits)
+    assign g2_2 = g1_2 | (p[2] & p[0] & g[0]);   // Combine 2-bit group (2nd and 0th bits)
   assign g2_3 = g1_3 | (p[3] & g1_1);   // Combine 2-bit group (3rd and 1st bits)
 
   // Compute final carry signals
